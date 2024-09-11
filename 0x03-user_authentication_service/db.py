@@ -38,7 +38,12 @@ class DB:
             hashed_password (str): The user's hashed password
             Return : the newly created user object
         """
-        new_user = User(email=email, hashed_password=hashed_password)
+        new_user = User(
+            email=email,
+            hashed_password=hashed_password,
+            session_id="",  # Default empty string instead of None
+            reset_token=""  # Default empty string instead of None
+        )
         self._session.add(new_user)
         self._session.commit()
         return new_user
