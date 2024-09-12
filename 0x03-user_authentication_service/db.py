@@ -56,7 +56,6 @@ class DB:
             Return:
                 - User object
         """
-
         attrs, vals = [], []
         for attr, val in kwargs.items():
             if not hasattr(User, attr):
